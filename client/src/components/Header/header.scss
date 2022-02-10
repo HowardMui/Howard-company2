@@ -1,0 +1,17 @@
+@import "../../styles/styles.scss";
+
+.navbar {
+  background: $bg-lightBlue-color;
+
+  & .navbar-toggler {
+    border: 0;
+    font-size: $btn-font-size;
+  }
+
+  & .navbar-nav a {
+    @include LinkTag();
+    &:hover {
+      color: $text-hover-color;
+    }
+  }
+}

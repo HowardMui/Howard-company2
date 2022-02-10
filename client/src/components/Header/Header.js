@@ -1,23 +1,28 @@
 import React from "react";
 import { Button, Container, Navbar, Nav } from "react-bootstrap";
-import classNames from "classnames";
-// import { NavSection } from "./NavStyles";
+import "./header.scss";
+import { IoMenuSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
-const Header = ({ className }) => {
-  console.log(className);
-
-  let styles = classNames(className, "bg-warning");
+const Header = () => {
+  // let styles = classNames("p-5", "bg-warning");
 
   return (
-    <Navbar className={styles}>
-      <Container className="abc">
+    <Navbar className="py-3" expand="md" fixed="top">
+      <Container>
         <Navbar.Brand href="#home">Howard Co.</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-        </Nav>
+        <Navbar.Toggle>
+          <IoMenuSharp></IoMenuSharp>
+        </Navbar.Toggle>
+        <Navbar.Collapse>
+          <Nav className="ms-auto">
+            <Link to="/">Home</Link>
+            <Link to="/about">about</Link>
+            <Link to="/service">Service</Link>
+            <Link to="/contact">Contact</Link>
+            <Button>Get Started</Button>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

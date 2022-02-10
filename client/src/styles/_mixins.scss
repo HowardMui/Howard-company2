@@ -1,0 +1,17 @@
+@mixin buttonstyle($color, $fontSize) {
+  width: 200px;
+  height: 40px;
+  background: $bg-lightYellow-color;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: $fontSize;
+  color: $color;
+}
+
+@mixin LinkTag {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: $black;
+  text-decoration: none;
+  transition: color 0.4s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
