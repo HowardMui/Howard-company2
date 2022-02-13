@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container, Navbar, Nav } from "react-bootstrap";
 import "./header.scss";
 import { IoMenuSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  // let styles = classNames("p-5", "bg-warning");
-
   return (
     <Navbar className="py-3" expand="md" fixed="top">
       <Container>
@@ -17,7 +15,7 @@ const Header = () => {
         <Navbar.Collapse>
           <Nav className="ms-auto">
             <Link to="/">Home</Link>
-            <Link to="/about">about</Link>
+            <Link to="/about">About</Link>
             <Link to="/service">Service</Link>
             <Link to="/contact">Contact</Link>
             <Button>Get Started</Button>

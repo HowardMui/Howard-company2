@@ -1,9 +1,10 @@
 import React from "react";
+import PageHeading from "../partials/PageHeading";
 
 const Service = () => {
   return (
     <div>
-      <p>This is service</p>
+      <PageHeading />
     </div>
   );
 };

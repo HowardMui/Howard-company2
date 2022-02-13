@@ -16,3 +16,15 @@
   text-decoration: none;
   transition: color 0.4s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
+@mixin sectionMarginTop {
+  margin-top: 4.5rem;
+  background: $Pageheading-bg-color;
+  padding: 18px 0;
+}
+
+@mixin displayFlex($value) {
+  display: flex;
+  justify-content: $value;
+  align-items: center;
+}

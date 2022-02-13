@@ -1,9 +1,10 @@
 import React from "react";
+import PageHeading from "../partials/PageHeading";
 
 const Contact = () => {
   return (
     <div>
-      <p>This is Contact</p>
+      <PageHeading />
     </div>
   );
 };

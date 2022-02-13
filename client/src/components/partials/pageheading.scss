@@ -1,0 +1,40 @@
+@import "../../styles/styles.scss";
+
+#section-heading {
+  @include sectionMarginTop();
+
+  & .section-div {
+    @include displayFlex(space-between);
+
+    & h3 {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    & ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+
+      & a {
+        text-decoration: none;
+        color: #d9232d;
+      }
+
+      & li + li {
+        padding-left: 10px;
+      }
+
+      & li + li::before {
+        display: inline-block;
+        padding-right: 10px;
+        color: #6b7b8d;
+        content: "/";
+      }
+    }
+  }
+}

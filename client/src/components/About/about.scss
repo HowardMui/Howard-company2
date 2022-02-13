@@ -1,0 +1,40 @@
+@import "../../styles/styles.scss";
+
+#aboutSection {
+  & .content {
+    & .left-col {
+      & h2 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 60px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      & h3 {
+        font-weight: 500;
+        line-height: 32px;
+        font-size: 24px;
+      }
+    }
+
+    & .right-col {
+      & p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      & ul {
+        & li {
+          padding: 10px 0 0 28px;
+          position: relative;
+
+          & svg {
+            left: 0;
+            position: absolute;
+            font-size: 20px;
+            color: #d9232d;
+          }
+        }
+      }
+    }
+  }
+}

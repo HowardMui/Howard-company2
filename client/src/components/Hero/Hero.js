@@ -17,7 +17,7 @@ const Hero = () => {
   ];
 
   return (
-    <Carousel fade id="hero" className="vw-100 vh-100" nextIcon={nextBtn} prevIcon={prevBtn}>
+    <Carousel fade id="hero" className="vw-100 vh-100" interval={10000} nextIcon={nextBtn} prevIcon={prevBtn}>
       {Items.map((item) => (
         <Carousel.Item>
           <img className="d-block w-100 h-100" src={item.image} alt="First slide" />
