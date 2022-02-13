@@ -1,0 +1,12 @@
+@import "../../styles/styles.scss";
+
+#services {
+  & .services-part1 {
+    & .services-box {
+      @include box-and-shadow();
+    }
+  }
+
+  & .services-part2 {
+  }
+}

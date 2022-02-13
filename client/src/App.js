@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./components/About/About";
 import Hero from "./components/Hero/Hero";
-import Service from "./components/Service/Service";
+import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
           <Route exact path="/" component={Hero}></Route>
 
           <Route exact path="/about" component={About}></Route>
-          <Route exact path="/service" component={Service}></Route>
+          <Route exact path="/services" component={Services}></Route>
           <Route exact path="/contact" component={Contact}></Route>
         </Switch>
       </Router>

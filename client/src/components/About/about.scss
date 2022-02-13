@@ -1,23 +1,25 @@
 @import "../../styles/styles.scss";
+@include animation-fadeInY(fade-up1, 80px, 0px);
+@include animation-fadeInY(fade-up2, 130px, 0px);
+@include animation-fadeInY(fade-up3, 180px, 0px);
+@include animation-fadeInX(fade-left, -100px, 0px);
+@include animation-fadeInX(fade-right, 100px, 0px);
 
 #aboutSection {
   & .content {
     & .left-col {
-      & h2 {
-        font-weight: 700;
-        font-size: 48px;
-        line-height: 60px;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-      }
-      & h3 {
-        font-weight: 500;
-        line-height: 32px;
-        font-size: 24px;
-      }
+      animation: fade-left 2s;
     }
 
     & .right-col {
+      animation: fade-right 2s;
+      & h3 {
+        font-weight: 500;
+        line-height: 32px;
+        font-size: 26px;
+        margin-bottom: 1.25rem;
+      }
+
       & p {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -31,9 +33,66 @@
             left: 0;
             position: absolute;
             font-size: 20px;
-            color: #d9232d;
+            color: $icon-color;
           }
         }
+      }
+    }
+  }
+
+  & .secondPart {
+    & .box-col:nth-of-type(1) {
+      animation: fade-up1 2s;
+    }
+    & .box-col:nth-of-type(2) {
+      animation: fade-up2 2s;
+    }
+    & .box-col:nth-of-type(3) {
+      animation: fade-up3 2s;
+    }
+    & .box-col {
+      transition: all ease-in-out 0.3s;
+    }
+
+    & .box-col:hover {
+      transform: translateY(-30px);
+    }
+
+    & .box {
+      @include box-and-shadow();
+
+      // &:hover {
+      //   & h4,
+      //   span,
+      //   p {
+      //     transform: translateY(-20px);
+      //   }
+      // }
+
+      & span,
+      h4,
+      p {
+        @include transition-text();
+      }
+
+      & span {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        color: $num-color;
+      }
+      & h4 {
+        font-size: $h4-font-size;
+        font-weight: 600;
+        padding: 0;
+        margin: 20px 0;
+        color: #191919;
+      }
+      & p {
+        color: #aaaaaa;
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
       }
     }
   }

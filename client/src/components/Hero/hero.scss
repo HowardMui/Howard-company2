@@ -1,6 +1,7 @@
 @import "../../styles/styles.scss";
 
 #hero {
+  overflow: hidden;
   & .carousel-indicators {
     & button {
       width: 12px;
@@ -51,7 +52,7 @@
 
   & .carousel-control-prev,
   .carousel-control-next {
-    width: 5%;
+    width: 10%;
     transition: 0.4s ease-in-out;
 
     & svg {
