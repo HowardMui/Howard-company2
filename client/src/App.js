@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
-import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import About from "./components/About/About";
 import Hero from "./components/Hero/Hero";
 import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   // useState[position, setPosition] = ("sticky");
@@ -21,6 +21,7 @@ const App = () => {
           <Route exact path="/services" component={Services}></Route>
           <Route exact path="/contact" component={Contact}></Route>
         </Switch>
+        <Footer />
       </Router>
     </>
   );

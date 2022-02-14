@@ -4,6 +4,8 @@ import { Col, Container, Row, Form, FloatingLabel } from "react-bootstrap";
 import PageHeading from "../partials/PageHeading";
 import { BsEnvelope } from "react-icons/bs";
 import { MdOutlineLocationOn, MdOutlinePhonelinkRing } from "react-icons/md";
+import GridCol from "../partials/Gird/GridCol";
+import Formtable from "../partials/Form/Formtable";
 
 const Contact = () => {
   const contactItem = [
@@ -12,11 +14,16 @@ const Contact = () => {
     { heading: "Phone", msg: "+852 92630122", icon: <MdOutlinePhonelinkRing />, size: 6 },
   ];
 
+  const formItem = [
+    { controlId: "subject", label: "Subject", type: "text", name: "subject" },
+    { controlId: "message", label: "Message", type: "", as: "textarea", style: "100px" },
+  ];
+
   return (
     <section className="" id="contact">
       <PageHeading />
       <Container>
-        <div className="googleMap mt-5">
+        <div className="googleMap my-5">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.3699343149115!2d114.20154325960388!3d22.33965643942737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340406dae1aa7a7d%3A0x797f9dc2ba7f4af3!2sDiamond%20Hill%20Station!5e0!3m2!1sen!2shk!4v1644750774555!5m2!1sen!2shk"
             width="100%"
@@ -26,46 +33,25 @@ const Contact = () => {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="form-part mt-5">
-          <Row>
+        <div className="info-part my-5">
+          <Row className="gy-5">
             <Col lg={6}>
-              <Row className="g-5">
+              <Row className="g-4 text-center ">
                 {contactItem.map((item) => (
-                  <Col lg={item.size}>
-                    <div className="contact-box">
-                      <div className={item.heading}>
-                        {item.icon}
-                        <h4>{item.heading}</h4>
-                        <p>{item.msg}</p>
-                      </div>
+                  <GridCol size={item.size}>
+                    <div className={item.heading}>
+                      {item.icon}
+                      <h4 className="mb-3">{item.heading}</h4>
+                      <p>{item.msg}</p>
                     </div>
-                  </Col>
+                  </GridCol>
                 ))}
               </Row>
             </Col>
 
-            <Col lg={6}>
-              <Form>
-                <Row>
-                  <Col lg={6}>
-                    <FloatingLabel controlId="name" label="Your name" className="mb-3">
-                      <Form.Control type="text" name="name" />
-                    </FloatingLabel>
-                  </Col>
-                  <Col lg={6}>
-                    <FloatingLabel controlId="email" label="Your Email" className="mb-3">
-                      <Form.Control type="text" name="email" />
-                    </FloatingLabel>
-                  </Col>
-                </Row>
-                <FloatingLabel controlId="subject" label="Subject" className="mb-3">
-                  <Form.Control type="text" />
-                </FloatingLabel>
-                <FloatingLabel controlId="message" label="Message" className="mb-3">
-                  <Form.Control as="textarea" placeholder="Message" style={{ height: "100px" }} />
-                </FloatingLabel>
-              </Form>
-            </Col>
+            <GridCol size={6}>
+              <Formtable />
+            </GridCol>
           </Row>
         </div>
       </Container>

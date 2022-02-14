@@ -6,9 +6,16 @@ $num-color: #ed5b5b;
 $icon-color: #ed5b5b;
 $heading-color: #000;
 $Pageheading-bg-color: #f8f9fa;
+$footer-text-color: #fff;
+$footer-color: #424242;
 
 // font-size
 
 $text-font-size: 1rem;
 $h4-font-size: 24px;
 $btn-font-size: 1.75rem;
+$icon-font-size: 30px;
+
+// transition time
+
+$transition-props: all ease-in-out 0.3s;

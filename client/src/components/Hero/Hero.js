@@ -32,11 +32,9 @@ const Hero = () => {
         </Carousel>
       </div>
 
-      <Container>
-        <div className="py-5">
-          <h4>Partnership</h4>
-        </div>
-      </Container>
+      <div className="py-5 partnership">
+        <div className="trypic"></div>
+      </div>
     </section>
   );
 };

@@ -5,6 +5,7 @@ import PageHeading from "../partials/PageHeading";
 import "./about.scss";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 import imgMeeting from "../../asset/images/meeting.jpg";
+import GridCol from "../partials/Gird/GridCol";
 
 const About = () => {
   const firstPartItem = [
@@ -44,20 +45,18 @@ const About = () => {
           </Row>
         </div>
 
-        <div className="secondPart py-5 mb-5">
-          <div className="py-5">
+        <div className="secondPart pb-5 mb-5">
+          <div className="py-5 heading">
             <h2>Why choose us?</h2>
           </div>
 
           <Row className="g-5">
             {secondPartItem.map((item) => (
-              <Col lg={4} className="box-col">
-                <div className="box" data-aos="fade-left">
-                  <span>{item.number}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.message}</p>
-                </div>
-              </Col>
+              <GridCol size={4}>
+                <span>{item.number}</span>
+                <h4>{item.title}</h4>
+                <p>{item.message}</p>
+              </GridCol>
             ))}
           </Row>
         </div>

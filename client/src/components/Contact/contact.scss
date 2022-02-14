@@ -1,1 +1,22 @@
 @import "../../styles/styles.scss";
+
+.info-part {
+  & .grid-box {
+    padding: 30px 30px;
+    & svg {
+      @include icon-css;
+      font-size: 70px;
+      padding: 12px 0px;
+      border: 3px dotted;
+      border-radius: 50%;
+    }
+    & h4 {
+      font-size: $h4-font-size;
+    }
+
+    & p {
+      font-size: $text-font-size;
+      overflow-wrap: break-word;
+    }
+  }
+}

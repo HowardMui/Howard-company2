@@ -2,8 +2,26 @@
 
 #services {
   & .services-part1 {
-    & .services-box {
-      @include box-and-shadow();
+    & .gridCol-div {
+      transition: $transition-props;
+    }
+
+    & .gridCol-div:hover {
+      transform: translateY(-30px);
+    }
+
+    & .grid-box {
+      text-align: center;
+
+      & svg {
+        @include icon-css;
+      }
+      & h4 {
+        font-size: $h4-font-size;
+      }
+      & p {
+        font-size: $text-font-size;
+      }
     }
   }
 

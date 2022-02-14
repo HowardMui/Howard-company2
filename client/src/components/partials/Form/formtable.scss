@@ -1,0 +1,10 @@
+@import "../../../styles/styles.scss";
+
+form {
+  & textarea {
+    height: 300px;
+  }
+  & button {
+    width: 100%;
+  }
+}

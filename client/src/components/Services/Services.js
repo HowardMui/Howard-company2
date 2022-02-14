@@ -2,37 +2,40 @@ import React from "react";
 import { Container, Row, Col, TabContainer, Nav, TabContent, Tab, Sonnet } from "react-bootstrap";
 import PageHeading from "../partials/PageHeading";
 import "./services.scss";
-import { FaHandHoldingUsd } from "react-icons/fa";
+import { FaHandHoldingUsd, FaUserTie, FaPencilRuler } from "react-icons/fa";
+import { MdOutlineSquareFoot } from "react-icons/md";
+import { RiTeamFill } from "react-icons/ri";
+import { IoIosConstruct } from "react-icons/io";
+import { SiKasasmart } from "react-icons/si";
+import GridCol from "../partials/Gird/GridCol";
 
 const Service = () => {
   const servicesItems = [
-    { icon: <FaHandHoldingUsd />, heading: "Free on-site measurement and quotation", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
-    { icon: <FaHandHoldingUsd />, heading: "Professional help-seeking inquiry", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
-    { icon: <FaHandHoldingUsd />, heading: "Professional design team", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
-    { icon: <FaHandHoldingUsd />, heading: "construction work", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
-    { icon: <FaHandHoldingUsd />, heading: "smart home solutions", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
-    { icon: <FaHandHoldingUsd />, heading: "space planning", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <MdOutlineSquareFoot />, heading: "Free on-site measurement and quotation", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <FaUserTie />, heading: "Professional help-seeking inquiry", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <RiTeamFill />, heading: "Professional design team", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <IoIosConstruct />, heading: "construction work", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <SiKasasmart />, heading: "smart home solutions", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
+    { icon: <FaPencilRuler />, heading: "space planning", msg: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, harum" },
   ];
 
   return (
     <section id="services">
       <PageHeading />
       <Container>
-        <div className="services-part1 py-5">
+        <div className="services-part1 mb-5 py-5">
           <Row className="g-5">
             {servicesItems.map((item) => (
-              <Col lg={6} xl={4} className="">
-                <div className="services-box">
-                  {item.icon}
-                  <h4 className="text-capitalize">{item.heading}</h4>
-                  <p>{item.msg}</p>
-                </div>
-              </Col>
+              <GridCol size={6} size2={4}>
+                {item.icon}
+                <h4 className="text-capitalize mb-4">{item.heading}</h4>
+                <p>{item.msg}</p>
+              </GridCol>
             ))}
           </Row>
         </div>
 
-        <div className="services-part2 py-5">
+        {/* <div className="services-part2 py-5">
           <div className="heading">
             <h2>Feature</h2>
             <p>Check our features</p>
@@ -63,7 +66,7 @@ const Service = () => {
               </Row>
             </TabContainer>
           </div>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

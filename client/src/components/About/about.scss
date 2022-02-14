@@ -30,10 +30,12 @@
           position: relative;
 
           & svg {
+            @include icon-css;
             left: 0;
+            bottom: 0;
+            margin: 0;
             position: absolute;
             font-size: 20px;
-            color: $icon-color;
           }
         }
       }
@@ -41,25 +43,32 @@
   }
 
   & .secondPart {
-    & .box-col:nth-of-type(1) {
-      animation: fade-up1 2s;
-    }
-    & .box-col:nth-of-type(2) {
-      animation: fade-up2 2s;
-    }
-    & .box-col:nth-of-type(3) {
-      animation: fade-up3 2s;
-    }
-    & .box-col {
-      transition: all ease-in-out 0.3s;
+    & .heading {
+      & h2 {
+        animation: fade-up1 2s;
+      }
     }
 
-    & .box-col:hover {
+    & .gridCol-div:nth-of-type(1) {
+      animation: fade-up1 2s;
+    }
+    & .gridCol-div:nth-of-type(2) {
+      animation: fade-up2 2s;
+    }
+    & .gridCol-div:nth-of-type(3) {
+      animation: fade-up3 2s;
+    }
+    & .gridCol-div {
+      transition: $transition-props;
+    }
+
+    & .gridCol-div:hover {
       transform: translateY(-30px);
     }
 
-    & .box {
-      @include box-and-shadow();
+    & .grid-box {
+      // 因為整咝GridCol component ，所以唔洗要下邊嘅嘢
+      // @include box-and-shadow();
 
       // &:hover {
       //   & h4,
