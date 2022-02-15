@@ -25,6 +25,7 @@ const Contact = () => {
       <Container>
         <div className="googleMap my-5">
           <iframe
+            className="mb-5"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.3699343149115!2d114.20154325960388!3d22.33965643942737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340406dae1aa7a7d%3A0x797f9dc2ba7f4af3!2sDiamond%20Hill%20Station!5e0!3m2!1sen!2shk!4v1644750774555!5m2!1sen!2shk"
             width="100%"
             height="400"
@@ -33,9 +34,9 @@ const Contact = () => {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="info-part my-5">
+        <div className="info-part mb-5">
           <Row className="gy-5">
-            <Col lg={6}>
+            <Col lg={6} className="my-5">
               <Row className="g-4 text-center ">
                 {contactItem.map((item) => (
                   <GridCol size={item.size}>
@@ -49,7 +50,7 @@ const Contact = () => {
               </Row>
             </Col>
 
-            <GridCol size={6}>
+            <GridCol size={6} className="my-5">
               <Formtable />
             </GridCol>
           </Row>

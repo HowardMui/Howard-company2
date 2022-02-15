@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section id="hero">
       <div className="carousel-part">
-        <Carousel fade className="vw-100 vh-100" interval={10000} nextIcon={nextBtn} prevIcon={prevBtn}>
+        <Carousel fade className="vw-100 vh-100" interval={3000} nextIcon={nextBtn} prevIcon={prevBtn}>
           {Items.map((item) => (
             <Carousel.Item>
               <img className="d-block w-100 h-100" src={item.image} alt="First slide" />

@@ -33,7 +33,9 @@ const Formtable = () => {
           <Form.Control as={item.as} name={item.name} style={item.style} />
         </FloatingLabel>
       ))}
-      <Button>Submit</Button>
+      <div className="text-center">
+        <Button>Submit</Button>
+      </div>
     </Form>
   );
 };
