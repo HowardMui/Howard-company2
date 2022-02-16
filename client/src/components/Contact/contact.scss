@@ -20,3 +20,9 @@
     }
   }
 }
+
+#spinner-page {
+  height: 90vh;
+
+  @include displayFlex(center);
+}

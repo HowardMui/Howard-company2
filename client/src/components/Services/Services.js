@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, TabContainer, Nav, TabContent, Tab, Sonnet } from "react-bootstrap";
-import PageHeading from "../partials/PageHeading";
+import PageHeading from "../partials/PageHeading/PageHeading";
 import "./services.scss";
 import { FaHandHoldingUsd, FaUserTie, FaPencilRuler } from "react-icons/fa";
 import { MdOutlineSquareFoot } from "react-icons/md";
@@ -23,7 +23,7 @@ const Service = () => {
     <section id="services">
       <PageHeading />
       <Container>
-        <div className="services-part1 mb-5 py-5">
+        <div className="services-part1 my-5 py-5">
           <Row className="g-5">
             {servicesItems.map((item) => (
               <GridCol size={6} size2={4}>

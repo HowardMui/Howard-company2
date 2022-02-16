@@ -27,7 +27,7 @@ app.use("/post", postRoutes);
 //Routes
 
 app.get("/", (req, res) => {
-  res.send("Hey there.");
+  res.send("Hey there, this is howard-company-project API.");
 });
 
 // PORT

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./contact.scss";
-import { Col, Container, Row, Form, FloatingLabel } from "react-bootstrap";
-import PageHeading from "../partials/PageHeading";
+import { Col, Container, Row, Form, FloatingLabel, Spinner } from "react-bootstrap";
+import PageHeading from "../partials/PageHeading/PageHeading";
 import { BsEnvelope } from "react-icons/bs";
 import { MdOutlineLocationOn, MdOutlinePhonelinkRing } from "react-icons/md";
 import GridCol from "../partials/Gird/GridCol";
 import Formtable from "../partials/Form/Formtable";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+
   const contactItem = [
     { heading: "Address", msg: "Diamond Hill, Kowloon, Hong Kong", icon: <MdOutlineLocationOn />, size: 12 },
     { heading: "Email", msg: "howardmui.2020@gmail.com", icon: <BsEnvelope />, size: 6 },
@@ -19,7 +21,11 @@ const Contact = () => {
     { controlId: "message", label: "Message", type: "", as: "textarea", style: "100px" },
   ];
 
-  return (
+  return loading ? (
+    <div id="spinner-page">
+      <Spinner className="p-5" animation="border" style={{ height: "50px" }} />
+    </div>
+  ) : (
     <section className="" id="contact">
       <PageHeading />
       <Container>
@@ -51,7 +57,7 @@ const Contact = () => {
             </Col>
 
             <GridCol size={6} className="my-5">
-              <Formtable />
+              <Formtable loading={loading} setLoading={setLoading} />
             </GridCol>
           </Row>
         </div>

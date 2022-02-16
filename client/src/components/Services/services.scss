@@ -1,13 +1,18 @@
 @import "../../styles/styles.scss";
+@include animation-fadeInY(fade-up1, 80px, 0px);
+@include animation-fadeInY(fade-up2, 130px, 0px);
+@include animation-fadeInY(fade-up3, 180px, 0px);
 
 #services {
   & .services-part1 {
     & .gridCol-div {
       transition: $transition-props;
-    }
 
-    & .gridCol-div:hover {
-      transform: translateY(-30px);
+      @for $i from 1 through 3 {
+        &:nth-of-type(3n + #{$i}) {
+          animation: (fade-up#{$i}) 2s;
+        }
+      }
     }
 
     & .grid-box {
@@ -23,8 +28,9 @@
         font-size: $text-font-size;
       }
     }
-  }
 
-  & .services-part2 {
+    & .grid-box:hover {
+      transform: translateY(-30px);
+    }
   }
 }

@@ -49,21 +49,14 @@
       }
     }
 
-    & .gridCol-div:nth-of-type(1) {
-      animation: fade-up1 2s;
-    }
-    & .gridCol-div:nth-of-type(2) {
-      animation: fade-up2 2s;
-    }
-    & .gridCol-div:nth-of-type(3) {
-      animation: fade-up3 2s;
-    }
     & .gridCol-div {
       transition: $transition-props;
-    }
 
-    & .gridCol-div:hover {
-      transform: translateY(-30px);
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation: (fade-up#{$i}) 2s;
+        }
+      }
     }
 
     & .grid-box {
@@ -77,6 +70,10 @@
       //     transform: translateY(-20px);
       //   }
       // }
+
+      &:hover {
+        transform: translateY(-30px);
+      }
 
       & span,
       h4,
