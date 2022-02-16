@@ -1,11 +1,19 @@
-@mixin buttonstyle($color, $fontSize) {
-  width: 200px;
-  height: 40px;
-  background: $bg-lightYellow-color;
-  border: 1px solid;
-  border-radius: 8px;
-  font-size: $fontSize;
-  color: $color;
+@mixin btnStyle() {
+  color: $text-color;
+  width: 30%;
+  &:hover {
+    background-color: $swap-bg-color-to-red;
+    color: $swap-text-color;
+  }
+}
+
+@mixin btn-color-style() {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid $btn-color;
+  &:hover {
+    border: 2px solid $swap-text-color;
+  }
 }
 
 @mixin LinkTag {

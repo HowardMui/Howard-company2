@@ -4,7 +4,7 @@ const postSchema = mongoose.Schema({
   name: String,
   email: String,
   title: String,
-  content: String,
+  message: String,
 });
 
 const PostMessage = mongoose.model("PostMessage", postSchema);

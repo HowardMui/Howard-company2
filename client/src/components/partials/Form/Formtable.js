@@ -1,40 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import "./formtable.scss";
 import { Col, Form, Row, FloatingLabel, Button } from "react-bootstrap";
+import { createPost } from "../../../actions/post.js";
+import { useHistory } from "react-router-dom";
 
 const Formtable = () => {
-  const formRowItem = [
-    { controlId: "name", label: "Your name", type: "text", name: "name" },
-    { controlId: "email", label: "Your Email", type: "email", name: "email" },
-  ];
+  const [postData, setPostData] = useState({ name: "", email: "", title: "", message: "" });
+  const history = useHistory();
+
+  // const formRowItem = [
+  //   { controlId: "name", label: "Your name", type: "text", name: "name" },
+  //   { controlId: "email", label: "Your Email", type: "email", name: "email" },
+  // ];
 
   let textareaStyle = {
     height: "210px",
   };
 
-  const formNormalItem = [
-    { controlId: "subject", label: "Subject", type: "text", name: "subject" },
-    { controlId: "message", label: "Message", type: "", as: "textarea", style: textareaStyle },
-  ];
+  // const formNormalItem = [
+  //   { controlId: "subject", label: "Subject", type: "text", name: "subject" },
+  //   { controlId: "message", label: "Message", type: "", as: "textarea", style: textareaStyle },
+  // ];
+
+  const clickHandler = () => {
+    // console.log(postData);
+    createPost(postData);
+    history.push("/submit");
+    // setPostData({ name: "", email: "", title: "", message: "" });
+  };
 
   return (
     <Form>
       <Row>
-        {formRowItem.map((item) => (
-          <Col lg={6}>
-            <FloatingLabel controlId={item.controlId} label={item.label} className="mb-3">
-              <Form.Control type={item.type} name={item.name} />
-            </FloatingLabel>
-          </Col>
-        ))}
+        {/* {formRowItem.map((item) => ( */}
+        <Col lg={6}>
+          <FloatingLabel controlId="name" label="Your name" className="mb-3">
+            <Form.Control type="text" name="" value={postData.name} onChange={(e) => setPostData({ ...postData, name: e.target.value })} />
+          </FloatingLabel>
+        </Col>
+        <Col lg={6}>
+          <FloatingLabel controlId="email" label="Your Email" className="mb-3">
+            <Form.Control type="email" name="email" value={postData.email} onChange={(e) => setPostData({ ...postData, email: e.target.value })} />
+          </FloatingLabel>
+        </Col>
+        {/* ))} */}
       </Row>
-      {formNormalItem.map((item) => (
-        <FloatingLabel controlId={item.controlId} label={item.label} className="mb-3">
-          <Form.Control as={item.as} name={item.name} style={item.style} />
-        </FloatingLabel>
-      ))}
+      {/* {formNormalItem.map((item) => ( */}
+      <FloatingLabel controlId="subject" label="Subject" className="mb-3">
+        <Form.Control type="text" name="subject" value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
+      </FloatingLabel>
+      <FloatingLabel controlId="message" label="Message" className="mb-3">
+        <Form.Control as="textarea" name="message" style={textareaStyle} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+      </FloatingLabel>
+      {/* ))} */}
       <div className="text-center">
-        <Button>Submit</Button>
+        <Button onClick={clickHandler}>Submit</Button>
       </div>
     </Form>
   );

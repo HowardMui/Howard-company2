@@ -47,6 +47,9 @@
         & .carousel-caption {
           bottom: 0;
           top: 45%;
+          & h1 {
+            font-size: 3.5rem;
+          }
         }
       }
     }

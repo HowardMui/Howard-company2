@@ -11,9 +11,9 @@ const prevBtn = <IoIosArrowBack></IoIosArrowBack>;
 
 const Hero = () => {
   const Items = [
-    { title: "Innovative ", message: "Nulla vitae elit libero", image: Carousel2 },
-    { title: "Committed ", message: "Nulla vitae elit libero", image: Carousel3 },
-    { title: "Cooperative", message: "Nulla vitae elit libero", image: Carousel1 },
+    { title: "Innovative ", message: "ipsum dolor sit amet consectetur adipisicing elit. Tenetur, necessitatibus!", image: Carousel2 },
+    { title: "Committed ", message: "Esse tempora laudantium non consectetur inventore repellat neque error fugit", image: Carousel3 },
+    { title: "Cooperative", message: "Inventore vitae placeat natus eveniet adipisci debitis nihil odio aperiam", image: Carousel1 },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Hero = () => {
             <Carousel.Item>
               <img className="d-block w-100 h-100" src={item.image} alt="First slide" />
               <Carousel.Caption>
-                <h3>{item.title}</h3>
+                <h1>{item.title}</h1>
                 <p>{item.message}</p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -32,9 +32,9 @@ const Hero = () => {
         </Carousel>
       </div>
 
-      <div className="py-5 partnership">
+      {/* <div className="py-5 partnership">
         <div className="trypic"></div>
-      </div>
+      </div> */}
     </section>
   );
 };
