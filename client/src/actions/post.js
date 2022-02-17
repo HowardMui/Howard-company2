@@ -13,7 +13,7 @@ export const createPost = async (data, history, setLoading) => {
   } catch (err) {
     console.log(err);
     console.log(err.response);
-    history.push("error");
+    history.push("/error");
     return err;
   }
 };

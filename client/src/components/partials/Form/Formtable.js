@@ -36,14 +36,14 @@ const Formtable = ({ loading, setLoading }) => {
     // // else {
 
     // if (postData.name.trim() === "" || postData.email.trim() === "" || postData.title.trim() === "" || postData.message.trim() === "") {
-    if (postData.name === "invalid") {
-      console.log("Missing sth");
-    } else {
-      console.log("All correct");
-    }
+    // if (postData.name === "invalid") {
+    //   console.log("Missing sth");
+    // } else {
+    //   console.log("All correct");
+    // }
 
     // e.preventDefault();
-    // createPost(postData, history, setLoading);
+    createPost(postData, history, setLoading);
     // }
   };
 
