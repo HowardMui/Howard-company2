@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const postRoutes = require("./routes/post.js");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 
 //MongoDb
 mongoose

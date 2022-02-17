@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const PostMessage = require("../models/postMessage");
+const { postValidation } = require("../Validation/validation");
 
 const getPosts = (req, res) => {
   res.send("This is GET and POST page");
@@ -8,6 +9,10 @@ const getPosts = (req, res) => {
 const createPosts = async (req, res) => {
   const post = req.body;
   console.log(post);
+
+  const { error } = postValidation(post);
+
+  if (error) res.send(error.details[0].message);
 
   const newPost = new PostMessage(post);
   try {
