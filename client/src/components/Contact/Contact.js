@@ -9,6 +9,7 @@ import Formtable from "../partials/Form/Formtable";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const contactItem = [
     { heading: "Address", msg: "Diamond Hill, Kowloon, Hong Kong", icon: <MdOutlineLocationOn />, size: 12 },
@@ -57,7 +58,7 @@ const Contact = () => {
             </Col>
 
             <GridCol size={6} className="my-5">
-              <Formtable loading={loading} setLoading={setLoading} />
+              <Formtable setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} />
             </GridCol>
           </Row>
         </div>
