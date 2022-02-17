@@ -12,7 +12,7 @@ const createPosts = async (req, res) => {
 
   const { error } = postValidation(post);
 
-  if (error) return res.status(401).send(error.details[0].message);
+  if (error) return res.status(400).send(error.details[0].message);
 
   const newPost = new PostMessage(post);
   try {
