@@ -7,10 +7,9 @@ import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Submit from "./components/partials/SuccessAndError/Submit";
-import Error from "./components/partials/SuccessAndError/Error";
 
 const App = () => {
-  // useState[position, setPosition] = ("sticky");
+  const [submit, setSubmit] = useState(false);
 
   return (
     <>
@@ -20,9 +19,12 @@ const App = () => {
           <Route exact path="/" component={Hero}></Route>
           <Route exact path="/about" component={About}></Route>
           <Route exact path="/services" component={Services}></Route>
-          <Route exact path="/contact" component={Contact}></Route>
-          <Route exact path="/submit" component={Submit}></Route>
-          <Route exact path="/error" component={Error}></Route>
+          <Route exact path="/contact">
+            <Contact setSubmit={setSubmit} />
+          </Route>
+          <Route exact path={submit ? "/submit" : "/error"}>
+            <Submit submit={submit} />
+          </Route>
         </Switch>
         <Footer />
       </Router>

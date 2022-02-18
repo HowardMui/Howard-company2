@@ -7,7 +7,7 @@ import { MdOutlineLocationOn, MdOutlinePhonelinkRing } from "react-icons/md";
 import GridCol from "../partials/Gird/GridCol";
 import Formtable from "../partials/Form/Formtable";
 
-const Contact = () => {
+const Contact = ({ setSubmit }) => {
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -54,7 +54,7 @@ const Contact = () => {
             </Col>
 
             <GridCol size={6} className="my-5">
-              <Formtable loading={loading} setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} />
+              <Formtable setSubmit={setSubmit} loading={loading} setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} />
             </GridCol>
           </Row>
         </div>

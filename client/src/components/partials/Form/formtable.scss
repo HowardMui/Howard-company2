@@ -1,6 +1,11 @@
 @import "../../../styles/styles.scss";
 
 form {
+  & .error-alert {
+    padding: 0.5rem 0.75rem;
+    border: none;
+  }
+
   & textarea {
     height: 300px;
   }

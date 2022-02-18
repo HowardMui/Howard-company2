@@ -4,7 +4,7 @@ import { Col, Form, Row, FloatingLabel, Button, Alert, Spinner } from "react-boo
 import { createPost } from "../../../actions/post.js";
 import { useHistory } from "react-router-dom";
 
-const Formtable = ({ errorMsg, setErrorMsg, loading, setLoading }) => {
+const Formtable = ({ setSubmit, errorMsg, setErrorMsg, loading, setLoading }) => {
   const [validated, setValidated] = useState(false);
 
   const [postData, setPostData] = useState({ name: "", email: "", title: "", message: "" });
@@ -28,48 +28,31 @@ const Formtable = ({ errorMsg, setErrorMsg, loading, setLoading }) => {
   // console.log(validated);
 
   const submitHandler = (e) => {
-    const form = e.currentTarget;
-    // setValidated(true);
-    // if (form.checkValidity() === false) {
-    //   e.preventDefault();
-    //   e.stopPropagation();
-    //   console.log("All correct");
-    // }
-    // // else {
-
-    // if (postData.name.trim() === "" || postData.email.trim() === "" || postData.title.trim() === "" || postData.message.trim() === "") {
-    // if (postData.name === "invalid") {
-    //   console.log("Missing sth");
-    // } else {
-    //   console.log("All correct");
-    // }
-
-    // e.preventDefault();
-    createPost(postData, history, setLoading, setErrorMsg, e);
-    // }
+    createPost(postData, history, setLoading, setErrorMsg, setSubmit);
   };
 
   return (
     <Form validated={validated}>
-      {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
+      {errorMsg && (
+        <Alert variant="danger" className="error-alert">
+          {errorMsg}
+        </Alert>
+      )}
       <Row>
         <Col lg={6}>
           <FloatingLabel controlId="name" label="Your name" className="mb-3">
             <Form.Control type="text" name="name" required value={postData.name} onChange={(e) => setPostData({ ...postData, name: e.target.value })} />
-            <Form.Control.Feedback type="invalid">Please provide a valid name.</Form.Control.Feedback>
           </FloatingLabel>
         </Col>
         <Col lg={6}>
           <FloatingLabel controlId="email" label="Your Email" className="mb-3">
             <Form.Control type="email" name="email" required value={postData.email} onChange={(e) => setPostData({ ...postData, email: e.target.value })} />
-            <Form.Control.Feedback type="invalid">Please provide a valid email.</Form.Control.Feedback>
           </FloatingLabel>
         </Col>
       </Row>
 
       <FloatingLabel controlId="subject" label="Subject" className="mb-3">
         <Form.Control type="text" name="subject" required value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-        <Form.Control.Feedback type="invalid">Please provide a title.</Form.Control.Feedback>
       </FloatingLabel>
       <FloatingLabel controlId="message" label="Message" className="mb-3">
         <Form.Control as="textarea" name="message" style={textareaStyle} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
@@ -79,14 +62,10 @@ const Formtable = ({ errorMsg, setErrorMsg, loading, setLoading }) => {
         {loading ? (
           <Button className="loadingBtn">
             <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
-            &nbsp; Loading...
+            {/* &nbsp; Loading... */}
           </Button>
         ) : (
           <Button onClick={submitHandler}>Submit</Button>
-          // <Button className="loadingBtn">
-          //   <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
-          //   &nbsp; Loading...
-          // </Button>
         )}
       </div>
     </Form>

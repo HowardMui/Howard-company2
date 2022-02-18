@@ -1,18 +1,17 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-import Header from "../../Header/Header";
 import PageHeading from "../PageHeading/PageHeading";
 import SuccessAndError from "./SuccessAndError";
 // import "./submit.scss";
 
-const Submit = () => {
-  const history = useHistory();
-
+const Submit = ({ submit }) => {
   return (
     <section className="" id="submit">
       <PageHeading />
-      <SuccessAndError text="Thank you for your submission!!" location="/" btn="Go to Home" />
+      {submit ? (
+        <SuccessAndError text="Thank you for your submission!!" location="/" btn="Go to Home" />
+      ) : (
+        <SuccessAndError text="Opps!! You got an error!! Please call the owner to fix this!!" location="/contact" btn="Contact Us" />
+      )}
     </section>
   );
 };

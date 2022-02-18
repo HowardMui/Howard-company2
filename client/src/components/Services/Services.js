@@ -23,7 +23,7 @@ const Service = () => {
     <section id="services">
       <PageHeading />
       <Container>
-        <div className="services-part1 my-5 py-5">
+        <div className="services-part1 py-5">
           <Row className="g-5">
             {servicesItems.map((item) => (
               <GridCol size={6} size2={4}>

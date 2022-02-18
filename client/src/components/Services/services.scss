@@ -4,7 +4,10 @@
 @include animation-fadeInY(fade-up3, 180px, 0px);
 
 #services {
+  margin-bottom: 10rem;
   & .services-part1 {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
     & .gridCol-div {
       transition: $transition-props;
 

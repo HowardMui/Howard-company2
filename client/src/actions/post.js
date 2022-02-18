@@ -1,16 +1,17 @@
 import * as api from "../api";
 
-export const createPost = async (data, history, setLoading, setErrorMsg, e) => {
+export const createPost = async (data, history, setLoading, setErrorMsg, setSubmit) => {
   try {
     setLoading(true);
     const receivedPost = await api.createPost(data);
     setLoading(false);
+    setSubmit(true);
     console.log(receivedPost);
-    console.log("Saved data.");
     history.push("/submit");
     return receivedPost;
   } catch (err) {
     setLoading(false);
+    setSubmit(false);
     // e.preventDefault();
     console.log(err);
     console.log(err.response);
