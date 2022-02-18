@@ -1,4 +1,4 @@
-# Howard-company2
+# Howard Company Full React Project
 
 Deploy the web to https://howardmui-company.netlify.app/.
 
