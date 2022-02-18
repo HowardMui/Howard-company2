@@ -5,6 +5,16 @@
     @include displayFlex(center);
     flex-direction: column;
 
+    & .icon-check {
+      color: green;
+      font-size: $icon-font-size-large;
+    }
+
+    & .icon-cross {
+      font-size: $icon-font-size-large;
+      color: $icon-color;
+    }
+
     & .btn {
       @include btnStyle();
     }

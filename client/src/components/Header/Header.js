@@ -8,7 +8,9 @@ const Header = () => {
   return (
     <Navbar className="py-3" expand="md" fixed="top">
       <Container>
-        <Navbar.Brand href="#home">Howard Co.</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          Howard Co.
+        </Navbar.Brand>
         <Navbar.Toggle>
           <IoMenuSharp></IoMenuSharp>
         </Navbar.Toggle>

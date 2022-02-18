@@ -9,6 +9,7 @@ const SuccessAndError = (props) => {
   return (
     <Container>
       <div className="p-5 div-container" style={{ height: "75vh" }}>
+        <h1>{props.children}</h1>
         <h1 className="mb-5">{props.text}</h1>
         <Button
           onClick={() => {
