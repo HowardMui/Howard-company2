@@ -22,7 +22,7 @@ const App = () => {
           <Route exact path="/contact">
             <Contact setSubmit={setSubmit} />
           </Route>
-          <Route exact path={submit ? "/submit" : "/error"}>
+          <Route exact path={submit ? "/contact/submit" : "/contect/error"}>
             <Submit submit={submit} />
           </Route>
         </Switch>

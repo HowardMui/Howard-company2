@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Fade, Row } from "react-bootstrap";
+import { Col, Container, Fade, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import PageHeading from "../partials/PageHeading/PageHeading";
 import "./about.scss";
@@ -27,7 +27,7 @@ const About = () => {
         <div className="firstPart py-5 ">
           <Row className="content g-5">
             <Col lg="6" className="left-col">
-              <img className="img-fluid" alt="about-pic" src={imgMeeting}></img>
+              <Image fluid alt="about-pic" src={imgMeeting}></Image>
             </Col>
             <Col lg="6" className=" right-col">
               <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>

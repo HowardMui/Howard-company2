@@ -7,7 +7,7 @@ export const createPost = async (data, history, setLoading, setErrorMsg, setSubm
     setLoading(false);
     setSubmit(true);
     console.log(receivedPost);
-    history.push("/submit");
+    history.push("/contact/submit");
     return receivedPost;
   } catch (err) {
     setLoading(false);
