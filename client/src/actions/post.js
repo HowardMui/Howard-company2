@@ -7,7 +7,6 @@ export const createPost = async (data, history, setLoading, setErrorMsg, e) => {
     setLoading(false);
     console.log(receivedPost);
     console.log("Saved data.");
-
     history.push("/submit");
     return receivedPost;
   } catch (err) {

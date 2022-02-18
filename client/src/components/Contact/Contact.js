@@ -22,11 +22,7 @@ const Contact = () => {
     { controlId: "message", label: "Message", type: "", as: "textarea", style: "100px" },
   ];
 
-  return loading ? (
-    <div id="spinner-page">
-      <Spinner className="p-5" animation="border" style={{ height: "50px" }} />
-    </div>
-  ) : (
+  return (
     <section className="" id="contact">
       <PageHeading />
       <Container>
@@ -58,7 +54,7 @@ const Contact = () => {
             </Col>
 
             <GridCol size={6} className="my-5">
-              <Formtable setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} />
+              <Formtable loading={loading} setLoading={setLoading} errorMsg={errorMsg} setErrorMsg={setErrorMsg} />
             </GridCol>
           </Row>
         </div>
@@ -68,3 +64,9 @@ const Contact = () => {
 };
 
 export default Contact;
+
+// loading ? (
+//   <div id="spinner-page">
+//     <Spinner className="p-5" animation="border" style={{ height: "50px" }} />
+//   </div>
+// ) :

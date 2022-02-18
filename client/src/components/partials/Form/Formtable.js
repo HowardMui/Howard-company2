@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./formtable.scss";
-import { Col, Form, Row, FloatingLabel, Button, Alert } from "react-bootstrap";
+import { Col, Form, Row, FloatingLabel, Button, Alert, Spinner } from "react-bootstrap";
 import { createPost } from "../../../actions/post.js";
 import { useHistory } from "react-router-dom";
 
-const Formtable = ({ errorMsg, setErrorMsg, setLoading }) => {
+const Formtable = ({ errorMsg, setErrorMsg, loading, setLoading }) => {
   const [validated, setValidated] = useState(false);
 
   const [postData, setPostData] = useState({ name: "", email: "", title: "", message: "" });
@@ -76,7 +76,18 @@ const Formtable = ({ errorMsg, setErrorMsg, setLoading }) => {
       </FloatingLabel>
 
       <div className="text-center">
-        <Button onClick={submitHandler}>Submit</Button>
+        {loading ? (
+          <Button className="loadingBtn">
+            <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+            &nbsp; Loading...
+          </Button>
+        ) : (
+          <Button onClick={submitHandler}>Submit</Button>
+          // <Button className="loadingBtn">
+          //   <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />
+          //   &nbsp; Loading...
+          // </Button>
+        )}
       </div>
     </Form>
   );

@@ -5,11 +5,20 @@ form {
     height: 300px;
   }
 
-  & .btn {
+  & .btn,
+  .loadingBtn {
     @include btnStyle;
   }
 
-  & .btn-primary {
+  & .btn-primary,
+  .loadingBtn {
     @include btn-color-style;
+    &:focus {
+      outline: none;
+      color: $bg-white-color;
+      background-color: $swap-bg-color-to-red;
+      border-color: $bg-white-color;
+      box-shadow: none;
+    }
   }
 }
